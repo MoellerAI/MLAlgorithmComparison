@@ -8,7 +8,7 @@ import numpy as np
 class KNearestNeighbors(BaseModel):
     def __init__(self, X_train: np.array, y_train: np.array, param_grid: dict = None) -> None:
         if param_grid is None:  
-            param_grid = param_grid ={'n_neighbors': range(5,30), 'p': [1, 2, 3, 4, np.inf]}
+            param_grid = param_grid ={'n_neighbors': range(3,30), 'p': [1, 2, 3, 4, np.inf]}
         self.classifier = KNeighborsClassifier()
         BaseModel.__init__(self, X_train, y_train, param_grid, random_state = False)
     
